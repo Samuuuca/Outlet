@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Loja</title>
+</head>
+<body>
+    <div class="top">
+        <h1>Outlet Tapiraí</h1>
+            <ul>
+                <li></li><a href="/AddProducts/addProducts.html">Adicionar Produtos</a></li>
+                <li><a href="../index.html">Vendas</a></li>
+                <li><a href="tabela.html">Tabela de Vendas</a></li>
+            </ul>
+    </div>
+    <div class="produtosPrincipais">
+        <h1>Produtos</h1>
+
+        <select type="text" id="inputPesquisa" onchange="mudarA()"> 
+            <option value="trento">Trento</option>
+            <option value="teste">Teste</option>
+            <option value="supreme">Supreme</option>
+            <option value="Volvo">Volvo</option>
+        </select>
+            
+            <a id="linkPesquisa" href=""> Pesquisar </a>
+        <div class="produtos">
+            <div class="produtoDiv">
+                    <p id="trento">Trento</p>
+                <div class="produto">
+                    <img src="img/trento.png" width="60px" height="60px" alt="trento">
+                </div>
+                    <div class="counter">
+                        <button type="button" onclick="remove()"> - </button>
+                        <input readonly type="number" id="counterTrento" onkeypress="somaFinal()">
+                    <button type="button" onclick="add()"> + </button>
+                </div>
+            </div>
+            <div class="produtoDiv">
+                    <p id="supreme">Supreme balls</p>
+                <div class="produto">
+                    <img src="img/supremeballs.jpg" width="60px" height="60px" alt="trento">
+                </div>
+                <div class="counter">
+                    <button type="button" onclick="removeSupreme()"> - </button>
+                    <input readonly type="number" id="counterSupreme" onkeypress="somaFinal()">
+                    <button type="button" onclick="addSupreme()"> + </button>
+                </div>
+            </div>
+        <div class="produtoDiv">
+            <p>Bolinho Ana Maria</p>
+            <div class="produto"></div>
+            <div class="counter">
+                <button type="button" onclick="removeSupreme()"> - </button>
+                <input readonly type="number" id="counterSupreme" onkeypress="somaFinal()">
+                <button type="button" onclick="addSupreme()"> + </button>
+            </div>
+        </div>
+        <div class="produtoDiv">
+            <p>Produto 4</p>
+            <div class="produto"></div>
+            <div class="counter">
+                <button type="button" onclick="removeSupreme()"> - </button>
+                <input readonly type="number" id="counterSupreme" onkeypress="somaFinal()">
+                <button type="button" onclick="addSupreme()"> + </button>
+            </div>
+        </div>
+        <div class="produtoDiv">
+            <p>Produto 5</p>
+            <div class="produto"></div>
+            <div class="counter">
+                <button type="button" onclick="removeSupreme()"> - </button>
+                <input readonly type="number" id="counterSupreme" onkeypress="somaFinal()">
+                <button type="button" onclick="addSupreme()"> + </button>
+            </div>
+        </div>
+        <div class="produtoDiv">
+            <p>Trento</p>
+        <div class="produto">
+            <img src="img/trento.png" width="60px" height="60px" alt="trento">
+        </div>
+            <div class="counter">
+                <button type="button" onclick="remove()"> - </button>
+                <input readonly type="number" id="counterTrento" onkeypress="somaFinal()">
+            <button type="button" onclick="add()"> + </button>
+        </div>
+        </div>
+        <div class="produtoDiv">
+            <p>Supreme balls</p>
+            <div class="produto">
+                <img src="img/supremeballs.jpg" width="60px" height="60px" alt="trento">
+            </div>
+            <div class="counter">
+                <button type="button" onclick="removeSupreme()"> - </button>
+                <input readonly type="number" id="counterSupreme" onkeypress="somaFinal()">
+                <button type="button" onclick="addSupreme()"> + </button>
+            </div>
+        </div>
+        <div class="produtoDiv">
+            <p>Bolinho Ana Maria</p>
+            <div class="produto"></div>
+                <div class="counter">
+                    <button type="button" onclick="removeSupreme()"> - </button>
+                    <input readonly type="number" id="counterSupreme" onkeypress="somaFinal()">
+                    <button type="button" onclick="addSupreme()"> + </button>
+            </div>
+        </div>
+        <div class="produtoDiv">
+            <p>Produto 4</p>
+            <div class="produto"></div>
+                <div class="counter">
+                    <button type="button" onclick="removeSupreme()"> - </button>
+                    <input readonly type="number" id="counterSupreme" onkeypress="somaFinal()">
+                    <button type="button" onclick="addSupreme()"> + </button>
+                </div>
+        </div>
+        <div class="produtoDiv">
+            <p>Produto 5</p>
+            <div class="produto"></div>
+                <div class="counter">
+                    <button type="button" onclick="removeSupreme()"> - </button>
+                    <input readonly type="number" id="counterSupreme" onkeypress="somaFinal()">
+                    <button type="button" onclick="addSupreme()"> + </button>
+            </div>
+        </div>
+    </div>
+    <div class="carinho">
+        <button onclick="somaFinal()"> Atualixar</button>
+        <h2>Valor total</h2>
+        <input id="somatotal" type="number" readonly>
+        <p>item 2</p>
+    </div>
+</div>
+
+<p id="teste"> aaaaa</p>
+
+
+<script>
+    
+    
+    let trento = document.getElementById('counterTrento')
+    let supreme = document.getElementById('counterSupreme')
+    let soma = document.getElementById('somatotal')
+
+    const a = document.getElementById('linkPesquisa')
+    const inputPesquisa = document.getElementById('inputPesquisa')
+
+    const mudarA = ()=> {
+        
+        a.href = '#'+ inputPesquisa.value;
+    }
+
+    i = 0
+    j = i
+    trento.innerHTML = i
+    soma.value = i
+
+    function add(){
+        i++
+        trento.value = i
+    }
+
+    function remove(){
+        i--
+         
+        if (i<0) {
+            i++
+        }
+        
+        trento.value = i
+    }
+    function addSupreme(){
+        j++
+        supreme.value = j
+    }
+
+    function removeSupreme(){
+        j--
+        if (j<0) {
+            j++
+        }
+        supreme.value = j
+    }
+
+    
+   
+    function somaFinal(){
+
+        let somafilaum = (i + j) * 2.50 
+        console.log(somafilaum)
+        soma.value = somafilaum
+        localStorage.setItem('db_valor', i)
+   }
+    const valorFinal = {
+
+        id: 00001,
+        item1: 'trento',
+        item2: 'supreme',
+        dbsomaFinal: soma.value
+    }
+
+    const getLocalStorage = ()=> JSON.parse(localStorage.getItem('db_client')) ?? []
+    const setLocalStorage = ()=> (dbClient) => localStorage.setItem('db_client', JSON.stringify(dbClient))
+
+    const creatCompra = (client) =>{
+
+        const dbClient = getLocalStorage()
+        dbClient.push (client)
+        setLocalStorage(dbClient)
+    }
+</script>
+</body>
+</html>
